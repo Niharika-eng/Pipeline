@@ -6,7 +6,7 @@ import mysql.connector
 db_conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Shivansh15",  # Replace with your actual MySQL password
+    password="********",  # Replace with your actual MySQL password, I have erased my password
     database="supermarket"
 )
 cursor = db_conn.cursor()
