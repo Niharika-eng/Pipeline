@@ -76,7 +76,7 @@ Example of inserted data:
 }
 ```
 
-## 📝 Future Improvements
+## Future Improvements
 - Implement **data analytics** on stored records
 - Add **machine learning predictions**
 - Expand to multiple tables with foreign keys
