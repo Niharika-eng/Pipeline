@@ -1,17 +1,17 @@
 # Real-Time Data Pipeline with Kafka & MySQL
 
-## 📌 Project Overview
+## Project Overview
 This project demonstrates a real-time data pipeline using **Kafka, Python, and MySQL**. The pipeline simulates supermarket sales transactions, streams data through Kafka, and stores the records in a MySQL database.
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Python** → For data generation, Kafka producer, and consumer
 - **Kafka** → Message broker for real-time data streaming
 - **MySQL** → Relational database for storing sales records
 - **Docker** → Running Kafka services locally
 
-## 📂 Project Structure
+## Project Structure
 ```
-📁 supermarket-pipeline
+supermarket-pipeline
 ├── producer.py        # Simulates sales data and sends it to Kafka
 ├── consumer.py        # Reads data from Kafka and inserts it into MySQL
 ├── sales.sql          # Database schema
@@ -19,26 +19,26 @@ This project demonstrates a real-time data pipeline using **Kafka, Python, and M
 └── README.md          # Documentation
 ```
 
-## 🚀 How to Set Up & Run
-### 1️⃣ Prerequisites
+## How to Set Up & Run
+### Prerequisites
 - Install **Docker** (for Kafka) and **MySQL** (local setup)
 - Install required Python libraries:
   ```sh
   pip install kafka-python mysql-connector-python
   ```
 
-### 2️⃣ Start Kafka Services
+### Start Kafka Services
 Run Kafka and Zookeeper using Docker:
 ```sh
 docker-compose up -d
 ```
 
-### 3️⃣ Create Kafka Topic
+### Create Kafka Topic
 ```sh
 docker exec -it kafka-setup-kafka-1 bash -c "/usr/bin/kafka-topics --create --topic sales-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1"
 ```
 
-### 4️⃣ Set Up MySQL Database
+### Set Up MySQL Database
 1. Start MySQL and create a database:
    ```sql
    CREATE DATABASE supermarket;
@@ -49,19 +49,19 @@ docker exec -it kafka-setup-kafka-1 bash -c "/usr/bin/kafka-topics --create --to
    mysql -u root -p supermarket < sales.sql
    ```
 
-### 5️⃣ Run the Producer
+### Run the Producer
 ```sh
 python producer.py
 ```
 This will generate random supermarket sales data and send it to Kafka.
 
-### 6️⃣ Run the Consumer
+### Run the Consumer
 ```sh
 python consumer.py
 ```
 This will read data from Kafka and insert it into MySQL.
 
-## 📊 Sample Output
+## Sample Output
 Example of inserted data:
 ```json
 {
